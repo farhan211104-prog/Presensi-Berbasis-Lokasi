@@ -1,0 +1,4347 @@
+/* ==========================================================================
+   STYLING UTAMA PORTAL MAHASISWA TELKOM UNIVERSITY
+   Mobile-First Aesthetics (Maksimal ~480px di Desktop)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAYOUT CONTAINER (MOBILE-FIRST FRAME)
+   -------------------------------------------------------------------------- */
+.mobile-page-wrapper {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  position: relative;
+  box-shadow: var(--shadow-mobile-frame);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 84px; /* Ruang untuk Bottom Navigation Bar */
+}
+
+.mobile-page-wrapper.center-content {
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  padding-bottom: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   2. HEADER BERANDA & SUBPAGE
+   -------------------------------------------------------------------------- */
+/* Header Utama Beranda Tel-U */
+.main-header {
+  background: linear-gradient(135deg, #E8313A 0%, #C7242C 100%);
+  color: #FFFFFF;
+  padding: 20px 20px 46px 20px;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  box-shadow: 0 4px 15px rgba(232, 49, 58, 0.25);
+}
+
+.main-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 6px 12px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.btn-logout-small {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout-small:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.main-header-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: var(--telu-red);
+  font-size: 1.35rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-greeting {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.profile-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #FFFFFF;
+}
+
+.profile-subtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Header Subpage (Presensi, Nilai, Rekap, Akun) */
+.subpage-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: var(--telu-red);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.btn-back:hover {
+  background-color: var(--telu-red-light);
+}
+
+.subpage-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   3. KONTEN BERANDA & JADWAL KULIAH HARI INI
+   -------------------------------------------------------------------------- */
+.beranda-content {
+  padding: 0 16px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Kartu Putih Besar Jadwal Kuliah (Menumpuk di Bawah Header) */
+.today-schedule-card {
+  margin-top: -30px;
+  background-color: var(--card-white);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.schedule-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.badge-today {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--telu-red);
+  background-color: var(--telu-red-light);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.dot-live {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--telu-red);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.status-badge-pending {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #D97706;
+  background-color: #FEF3C7;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.status-badge-attended {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #059669;
+  background-color: #D1FAE5;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.course-card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.course-card-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.schedule-three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px dashed var(--border-light);
+  border-bottom: 1px dashed var(--border-light);
+  margin-bottom: 16px;
+}
+
+.schedule-col {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.col-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: var(--telu-red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.col-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.col-label {
+  font-size: 0.7rem;
+  color: var(--text-subtle);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.col-value {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.btn-schedule-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--telu-red);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 8px rgba(232, 49, 58, 0.25);
+}
+
+.btn-schedule-action:hover {
+  background-color: var(--telu-red-dark);
+  transform: translateY(-1px);
+}
+
+.btn-schedule-action.btn-attended {
+  background-color: #059669;
+  box-shadow: 0 3px 8px rgba(5, 150, 105, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   4. SECTION FITUR APLIKASI (HANYA 3 TOMBOL)
+   -------------------------------------------------------------------------- */
+.features-section {
+  background-color: var(--card-white);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-card);
+}
+
+.features-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.section-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+  font-weight: 500;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.feature-button {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.feature-button:hover {
+  transform: translateY(-3px);
+  border-color: var(--telu-red);
+  box-shadow: 0 6px 14px rgba(232, 49, 58, 0.12);
+}
+
+.feature-button:active {
+  transform: scale(0.96);
+}
+
+.feature-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--telu-red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.feature-button:hover .feature-icon-wrapper {
+  background-color: #FCD6D9;
+}
+
+.feature-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: center;
+  line-height: 1.25;
+}
+
+.feature-badge {
+  position: absolute;
+  top: -6px;
+  right: -4px;
+  background-color: var(--telu-red);
+  color: #FFFFFF;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(232, 49, 58, 0.3);
+}
+
+/* Banner Informasi Akademik */
+.academic-info-banner {
+  background-color: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  border-radius: 16px;
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.info-banner-icon {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.info-banner-text h5 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0369A1;
+  margin-bottom: 2px;
+}
+
+.info-banner-text p {
+  font-size: 0.74rem;
+  color: #0C4A6E;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   5. BOTTOM NAVIGATION BAR
+   -------------------------------------------------------------------------- */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  height: 68px;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #94A3B8;
+  font-size: 0.68rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: 6px;
+  width: 60px;
+}
+
+.nav-item.active {
+  color: var(--telu-red);
+  font-weight: 700;
+}
+
+.nav-item:hover {
+  color: var(--telu-red);
+}
+
+/* Tombol Scan Bulat Merah Menonjol di Tengah */
+.nav-item-scan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  margin-top: -22px;
+}
+
+.scan-btn-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E8313A 0%, #C7242C 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(232, 49, 58, 0.4);
+  border: 3px solid #FFFFFF;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scan-btn-circle:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(232, 49, 58, 0.5);
+}
+
+.scan-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   6. HALAMAN PRESENSI MAHASISWA
+   -------------------------------------------------------------------------- */
+.subpage-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subpage-content.center-flex {
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.presensi-date-card {
+  background-color: var(--card-white);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.date-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: var(--telu-red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.date-badge-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--telu-red);
+}
+
+.date-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.date-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.success-toast {
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-sm);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.presensi-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background-color: #E2E8F0;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.course-presensi-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.course-presensi-card {
+  background-color: var(--card-white);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all 0.2s ease;
+}
+
+.course-presensi-card.attended-card {
+  border-left: 5px solid #10B981;
+}
+
+.course-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.course-code-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--telu-red);
+  background-color: var(--telu-red-light);
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.course-sks-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background-color: #F1F5F9;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.course-presensi-name {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.course-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.meta-item.full-width {
+  grid-column: span 2;
+  border-top: 1px dashed var(--border-light);
+  padding-top: 6px;
+  margin-top: 2px;
+}
+
+.presensi-action-area {
+  border-top: 1px solid var(--border-light);
+  padding-top: 14px;
+}
+
+.btn-lakukan-presensi {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--telu-red);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(232, 49, 58, 0.25);
+}
+
+.btn-lakukan-presensi:hover {
+  background-color: var(--telu-red-dark);
+}
+
+.btn-lakukan-presensi:active {
+  transform: scale(0.98);
+}
+
+.status-sudah-presensi-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status-sudah-presensi {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.btn-presensi-ulang {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #FCA5A5;
+  color: var(--telu-red);
+  padding: 9px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-presensi-ulang:hover:not(:disabled) {
+  background-color: var(--telu-red-light);
+  border-color: var(--telu-red);
+  transform: translateY(-1px);
+}
+
+.btn-presensi-ulang:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+
+.status-sudah-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-label-bold {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #065F46;
+}
+
+.status-jam-keterangan {
+  font-size: 0.76rem;
+  color: #047857;
+  font-weight: 600;
+}
+
+.presensi-note-card {
+  background-color: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 0.76rem;
+  color: #92400E;
+  line-height: 1.4;
+}
+
+.empty-state-card {
+  background-color: var(--card-white);
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+}
+
+.empty-state-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   7. HALAMAN NILAI MAHASISWA
+   -------------------------------------------------------------------------- */
+.semester-select-card,
+.course-select-card {
+  background-color: var(--card-white);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.semester-label,
+.course-select-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.semester-dropdown,
+.course-dropdown {
+  width: 100%;
+  appearance: none;
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 12px 36px 12px 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.semester-dropdown:focus,
+.course-dropdown:focus {
+  border-color: var(--telu-red);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.course-lecturer-info {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.gpa-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.gpa-card {
+  background-color: var(--card-white);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.gpa-card-ips {
+  border-top: 4px solid var(--telu-red);
+}
+
+.gpa-card-ipk {
+  border-top: 4px solid #3B82F6;
+}
+
+.gpa-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.gpa-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.gpa-sub {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background-color: #F1F5F9;
+  color: var(--text-muted);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.gpa-badge-honor {
+  font-size: 0.65rem;
+  font-weight: 700;
+  background-color: #EFF6FF;
+  color: #2563EB;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.gpa-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin: 4px 0;
+}
+
+.gpa-score {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.gpa-scale {
+  font-size: 0.8rem;
+  color: var(--text-subtle);
+  font-weight: 600;
+}
+
+.gpa-desc {
+  font-size: 0.7rem;
+  color: var(--text-subtle);
+}
+
+/* Tabel Nilai */
+.nilai-table-section {
+  background-color: var(--card-white);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.table-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.nilai-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+  font-size: 0.8rem;
+}
+
+.nilai-table th {
+  background-color: #F8FAFC;
+  color: var(--text-muted);
+  font-weight: 700;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+  white-space: nowrap;
+}
+
+.nilai-table td {
+  padding: 12px;
+  border-bottom: 1px solid #F1F5F9;
+  color: var(--text-main);
+}
+
+.nilai-table tr:last-child td {
+  border-bottom: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.td-course-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.td-course-name {
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.td-course-code {
+  font-size: 0.7rem;
+  color: var(--text-subtle);
+  font-weight: 600;
+}
+
+.grade-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.badge-grade-a {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.badge-grade-ab {
+  background-color: #ECFDF5;
+  color: #047857;
+}
+
+.badge-grade-b {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+.badge-grade-bc {
+  background-color: #EDE9FE;
+  color: #5B21B6;
+}
+
+.badge-grade-c {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.badge-grade-d {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.table-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   8. HALAMAN REKAP KEHADIRAN
+   -------------------------------------------------------------------------- */
+.rekap-summary-card {
+  background-color: var(--card-white);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rekap-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.summary-title-small {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.percentage-display {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.percent-num {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.percent-num.safe-text {
+  color: #059669;
+}
+
+.percent-num.danger-text {
+  color: #DC2626;
+}
+
+.percent-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.threshold-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.threshold-tag.safe-tag {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.threshold-tag.danger-tag {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 10px;
+  background-color: #E2E8F0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+.progress-bar-fill.fill-safe {
+  background: linear-gradient(90deg, #10B981, #059669);
+}
+
+.progress-bar-fill.fill-danger {
+  background: linear-gradient(90deg, #EF4444, #DC2626);
+}
+
+.attendance-counts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.attendance-counts-grid.counts-grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.count-pill {
+  border-radius: 12px;
+  padding: 8px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.count-pill-num {
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.count-pill-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.pill-hadir {
+  background-color: #ECFDF5;
+  color: #065F46;
+}
+
+.pill-terlambat {
+  background-color: #FEF3C7;
+  color: #B45309;
+}
+
+.pill-izin {
+  background-color: #EFF6FF;
+  color: #1E40AF;
+}
+
+.pill-sakit {
+  background-color: #F3E8FF;
+  color: #6B21A8;
+}
+
+.pill-alpha {
+  background-color: #FEF2F2;
+  color: #991B1B;
+}
+
+.danger-warning-banner {
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  color: #991B1B;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.danger-warning-banner strong {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+/* Timeline Pertemuan Rekap */
+.meetings-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-meetings {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meeting-card {
+  background-color: var(--card-white);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.meeting-card.meeting-today-card {
+  border: 2px solid var(--telu-red);
+  background-color: #FFFAFA;
+}
+
+.meeting-card-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.meeting-number-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  background-color: #F1F5F9;
+  color: var(--text-main);
+  padding: 6px 8px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.meeting-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meeting-date-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meeting-date {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.pill-today-active {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--telu-red);
+  background-color: var(--telu-red-light);
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+.meeting-materi {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.meeting-jam-info {
+  font-size: 0.72rem;
+  color: #059669;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.status-badge-meeting {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.badge-status-hadir {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.badge-status-terlambat {
+  background-color: #FEF3C7;
+  color: #B45309;
+}
+
+.badge-status-izin {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+.badge-status-sakit {
+  background-color: #F3E8FF;
+  color: #6B21A8;
+}
+
+.badge-status-alpha {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.badge-status-pending {
+  background-color: #F1F5F9;
+  color: #64748B;
+  border: 1px dashed #CBD5E1;
+}
+
+/* --------------------------------------------------------------------------
+   9. HALAMAN PROFIL AKUN
+   -------------------------------------------------------------------------- */
+.profile-card-large {
+  background-color: var(--card-white);
+  border-radius: 20px;
+  padding: 24px 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-large-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E8313A 0%, #C7242C 100%);
+  color: #FFFFFF;
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(232, 49, 58, 0.3);
+  margin-bottom: 12px;
+}
+
+.profile-large-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.profile-badge-role {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--telu-red);
+  background-color: var(--telu-red-light);
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+.profile-large-nim {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.account-details-card {
+  background-color: var(--card-white);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-section-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  padding: 4px 0;
+}
+
+.detail-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.detail-value {
+  color: var(--text-main);
+  font-weight: 700;
+  text-align: right;
+}
+
+.text-success {
+  color: #059669;
+}
+
+.logout-section {
+  margin-top: 10px;
+}
+
+.btn-logout-full {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #DC2626;
+  padding: 13px 16px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout-full:hover {
+  background-color: #DC2626;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   10. HALAMAN LOGIN
+   -------------------------------------------------------------------------- */
+.login-container {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: var(--shadow-mobile-frame);
+}
+
+.login-card {
+  width: 100%;
+  background-color: var(--card-white);
+  border-radius: 24px;
+  padding: 28px 22px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-logo-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  background-color: var(--telu-red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px auto;
+  box-shadow: 0 4px 12px rgba(232, 49, 58, 0.15);
+}
+
+.login-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.login-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.role-selector-wrapper {
+  margin-bottom: 18px;
+}
+
+.role-label-title {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.role-toggle-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #F1F5F9;
+  padding: 4px;
+  border-radius: 14px;
+  gap: 4px;
+}
+
+.role-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.role-toggle-btn.active {
+  background-color: #FFFFFF;
+  color: var(--telu-red);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.error-alert {
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #DC2626;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.form-input {
+  width: 100%;
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 12px 14px 12px 42px;
+  font-size: 0.88rem;
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-input.has-toggle {
+  padding-right: 44px;
+}
+
+.form-input:focus {
+  border-color: var(--telu-red);
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(232, 49, 58, 0.12);
+}
+
+.btn-toggle-password {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.btn-primary-login {
+  width: 100%;
+  background: linear-gradient(135deg, #E8313A 0%, #C7242C 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 14px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(232, 49, 58, 0.3);
+}
+
+.btn-primary-login:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(232, 49, 58, 0.4);
+}
+
+.btn-primary-login:active {
+  transform: scale(0.98);
+}
+
+.demo-accounts-box {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.demo-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-subtle);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.demo-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.demo-chip {
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.demo-chip:hover {
+  background-color: var(--telu-red-light);
+  border-color: #FCA5A5;
+}
+
+.chip-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--telu-red);
+}
+
+.chip-badge.dosen {
+  color: #2563EB;
+}
+
+.chip-cred {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-family: monospace;
+}
+
+/* --------------------------------------------------------------------------
+   11. DOSEN PLACEHOLDER & GENERAL PLACEHOLDER
+   -------------------------------------------------------------------------- */
+.dosen-placeholder-card,
+.empty-placeholder-box {
+  background-color: var(--card-white);
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.placeholder-icon-circle,
+.empty-icon-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background-color: var(--telu-red-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.empty-icon-circle {
+  background-color: #F1F5F9;
+}
+
+.placeholder-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--telu-red);
+  background-color: var(--telu-red-light);
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.placeholder-title,
+.empty-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.placeholder-desc,
+.empty-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   12. FITUR PRESENSI GEOLOKASI & STATUS AREA (TUGAS AKHIR)
+   -------------------------------------------------------------------------- */
+.location-status-card {
+  background-color: var(--card-white);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loc-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loc-header-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.loc-badge-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.loc-tag-inside {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.loc-tag-outside {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.loc-target-name {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.loc-metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background-color: #F8FAFC;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.loc-metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.loc-metric-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.loc-metric-val {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.text-danger {
+  color: #DC2626 !important;
+}
+
+.gps-accuracy-warning {
+  background-color: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.72rem;
+  color: #92400E;
+  line-height: 1.35;
+}
+
+/* Peringatan Merah Saat Pengguna Berada di Luar Radius */
+.out-of-radius-box {
+  background-color: #FEF2F2;
+  border: 1.5px solid #FCA5A5;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: shakeAlert 0.4s ease;
+}
+
+@keyframes shakeAlert {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.out-of-radius-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.out-of-radius-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #991B1B;
+}
+
+.out-of-radius-desc {
+  font-size: 0.8rem;
+  color: #7F1D1D;
+  line-height: 1.45;
+}
+
+.btn-retry-location {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #DC2626;
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-retry-location:hover {
+  background-color: #B91C1C;
+}
+
+/* --------------------------------------------------------------------------
+   13. PANEL MODE DEVELOPER (PENGUJIAN TA)
+   -------------------------------------------------------------------------- */
+.developer-mode-panel {
+  background-color: #F8FAFC;
+  border: 1.5px dashed #94A3B8;
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dev-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dev-panel-tag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  background-color: #475569;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+}
+
+.dev-panel-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.dev-panel-desc {
+  font-size: 0.74rem;
+  color: #475569;
+  line-height: 1.35;
+}
+
+.dev-actions-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-dev-action {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: var(--text-main);
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-dev-action:hover {
+  border-color: var(--telu-red);
+  background-color: var(--telu-red-light);
+}
+
+.btn-dev-reset {
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  color: #DC2626;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-dev-reset:hover {
+  background-color: #DC2626;
+  color: #FFFFFF;
+}
+
+.dev-copy-status {
+  font-size: 0.72rem;
+  color: #059669;
+  font-weight: 700;
+}
+
+.dev-toggle-row {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 8px;
+}
+
+.dev-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.dev-coords-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #E2E8F0;
+}
+
+.dev-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dev-input-group label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  width: 32px;
+  color: var(--text-muted);
+}
+
+.dev-input-group input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-family: monospace;
+}
+
+.dev-presets-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.btn-preset-chip {
+  flex: 1;
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-preset-chip:hover {
+  background-color: #D1FAE5;
+}
+
+.btn-preset-chip.danger {
+  background-color: #FEF2F2;
+  border-color: #FECACA;
+  color: #991B1B;
+}
+
+.btn-preset-chip.danger:hover {
+  background-color: #FEE2E2;
+}
+
+/* --------------------------------------------------------------------------
+   14. MODAL KAMERA (FACE RECOGNITION SIMULASI)
+   -------------------------------------------------------------------------- */
+.camera-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.camera-modal-content {
+  background-color: var(--card-white);
+  width: 100%;
+  max-width: 440px;
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: scaleUp 0.25s ease;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.camera-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.camera-modal-title {
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.camera-modal-subtitle {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.btn-close-modal {
+  background: #F1F5F9;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-close-modal:hover:not(:disabled) {
+  background-color: #E2E8F0;
+  color: var(--text-main);
+}
+
+/* Area Viewport Kamera */
+.camera-viewport-container {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: #0F172A;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.camera-video-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1); /* Cermin alami untuk kamera depan */
+}
+
+/* Overlay Oval Panduan Wajah */
+.face-guide-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.face-guide-oval {
+  width: 170px;
+  height: 230px;
+  border-radius: 50%;
+  border: 3px dashed rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.face-guide-oval.scanning-active {
+  border: 3px solid #10B981;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5), 0 0 25px rgba(16, 185, 129, 0.6);
+}
+
+.scanner-laser-line {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #10B981, transparent);
+  box-shadow: 0 0 10px #10B981;
+  animation: scanLaser 1.5s infinite ease-in-out alternate;
+}
+
+@keyframes scanLaser {
+  0% { top: 5%; }
+  100% { top: 95%; }
+}
+
+.face-guide-instruction {
+  position: absolute;
+  bottom: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.camera-loading-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 15;
+}
+
+.camera-error-box {
+  padding: 24px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #FFFFFF;
+}
+
+.camera-error-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #F87171;
+}
+
+.camera-error-desc {
+  font-size: 0.76rem;
+  color: #CBD5E1;
+  line-height: 1.4;
+}
+
+.camera-info-banner {
+  background-color: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  color: #0369A1;
+  line-height: 1.35;
+}
+
+.camera-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-modal-cancel {
+  flex: 1;
+  background-color: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: var(--text-main);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-cancel:hover:not(:disabled) {
+  background-color: #E2E8F0;
+}
+
+.btn-modal-verify {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #E8313A 0%, #C7242C 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(232, 49, 58, 0.3);
+}
+
+.btn-modal-verify:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(232, 49, 58, 0.4);
+}
+
+.btn-modal-verify:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Spinner CSS */
+.spinner-border {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.spinner-border-sm {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================================================== */
+/* STYLING TAMBAHAN UNTUK MAHASISWA (REKAP TERLAMBAT & SESI DITUTUP)          */
+/* ========================================================================== */
+.counts-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 6px !important;
+}
+
+.pill-terlambat {
+  background-color: #FEF3C7;
+  color: #B45309;
+}
+
+.badge-status-terlambat {
+  background-color: #FEF3C7;
+  color: #B45309;
+  border: 1px solid #FDE68A;
+}
+
+.sesi-ditutup-card {
+  background-color: #F8FAFC;
+  border: 1px dashed #CBD5E1;
+  border-radius: 12px;
+  padding: 12px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.sesi-ditutup-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #64748B;
+  background-color: #E2E8F0;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.sesi-ditutup-pesan {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748B;
+  margin: 0;
+}
+
+/* ========================================================================== */
+/* KOMPONEN BADGE STATUS GLOBAL                                              */
+/* ========================================================================== */
+.badge-status-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.badge-status-item.badge-sm {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+}
+
+.badge-status-item.badge-md {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+}
+
+.badge-status-item.badge-lg {
+  font-size: 0.85rem;
+  padding: 6px 14px;
+}
+
+.badge-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.badge-status-sub {
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+/* ========================================================================== */
+/* BERANDA DOSEN: HERO CARD & LIVE SUMMARY                                    */
+/* ========================================================================== */
+.section-title-dosen {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+.live-clock-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #475569;
+  background-color: #F1F5F9;
+  padding: 3px 10px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dosen-hero-card {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF5F5 100%);
+  border: 1.5px solid #FCA5A5;
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 4px 16px rgba(232, 49, 58, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dosen-hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 49, 58, 0.14);
+}
+
+.dosen-hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.dosen-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #FEE2E2;
+  color: #DC2626;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.4px;
+}
+
+.live-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #DC2626;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.dosen-hero-time {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.dosen-hero-title {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.dosen-hero-subtitle {
+  font-size: 0.82rem;
+  color: #64748B;
+  font-weight: 600;
+  margin: 0 0 14px 0;
+}
+
+.dosen-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 10px 8px;
+  border: 1px solid #F1F5F9;
+  margin-bottom: 14px;
+}
+
+.hero-metric-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-metric-val {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-metric-lbl {
+  font-size: 0.68rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.metric-hadir .hero-metric-val { color: #059669; }
+.metric-hadir .hero-metric-lbl { color: #059669; }
+
+.metric-terlambat .hero-metric-val { color: #D97706; }
+.metric-terlambat .hero-metric-lbl { color: #D97706; }
+
+.metric-belum .hero-metric-val { color: #64748B; }
+.metric-belum .hero-metric-lbl { color: #64748B; }
+
+.metric-total .hero-metric-val { color: #2563EB; }
+.metric-total .hero-metric-lbl { color: #2563EB; }
+
+.dosen-hero-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #FEE2E2;
+  padding-top: 12px;
+}
+
+.btn-sesi-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-sesi-toggle.sesi-buka {
+  background-color: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #86EFAC;
+}
+
+.btn-sesi-toggle.sesi-tutup {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+  border: 1px solid #FCA5A5;
+}
+
+.sesi-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.dosen-hero-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #E8313A;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ========================================================================== */
+/* DAFTAR MATA KULIAH DOSEN                                                   */
+/* ========================================================================== */
+.dosen-matkul-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dosen-matkul-card {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dosen-matkul-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.dosen-matkul-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.dosen-matkul-kode {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #E8313A;
+  background-color: #FFF1F2;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.dosen-matkul-sks {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.dosen-matkul-nama {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
+}
+
+.dosen-matkul-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-bottom: 12px;
+}
+
+.dosen-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.76rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.dosen-matkul-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 10px;
+}
+
+.sesi-status-chip {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sesi-status-chip.chip-open {
+  background-color: #DCFCE7;
+  color: #15803D;
+}
+
+.sesi-status-chip.chip-closed {
+  background-color: #F1F5F9;
+  color: #64748B;
+}
+
+.dosen-view-detail-btn {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #E8313A;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ========================================================================== */
+/* DETAIL MATKUL DOSEN (HEADER, TABS, SESI CONTROL)                           */
+/* ========================================================================== */
+.detail-matkul-header-card {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%);
+  border-radius: 18px;
+  padding: 16px;
+  border: 1px solid #E2E8F0;
+  margin-bottom: 14px;
+}
+
+.matkul-header-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.matkul-badge-kode {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #E8313A;
+  background-color: #FFF1F2;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.matkul-badge-sks {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.matkul-title-large {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.matkul-meta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-bottom: 14px;
+}
+
+.meta-badge-item {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  background-color: #F1F5F9;
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.sesi-control-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 10px 12px;
+  gap: 10px;
+}
+
+.sesi-info-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sesi-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sesi-status-dot.dot-open {
+  background-color: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.sesi-status-dot.dot-closed {
+  background-color: #EF4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.sesi-text-title {
+  display: block;
+  font-size: 0.8rem;
+  color: #0F172A;
+}
+
+.sesi-text-sub {
+  margin: 0;
+  font-size: 0.7rem;
+  color: #64748B;
+}
+
+.btn-toggle-sesi-switch {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.btn-toggle-sesi-switch.btn-switch-on {
+  background-color: #FEE2E2;
+  color: #DC2626;
+  border: 1px solid #FCA5A5;
+}
+
+.btn-toggle-sesi-switch.btn-switch-off {
+  background-color: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #86EFAC;
+}
+
+/* 3 TABS SEGMENT */
+.tabs-segment-wrapper {
+  display: flex;
+  background-color: #F1F5F9;
+  border-radius: 14px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.tab-segment-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 6px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #64748B;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-segment-btn.active {
+  background-color: #FFFFFF;
+  color: #E8313A;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ========================================================================== */
+/* TAB 1: TABEL PRESENSI PER PERTEMUAN                                        */
+/* ========================================================================== */
+.pertemuan-selector-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.select-pertemuan-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.select-pertemuan-dropdown {
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid #CBD5E1;
+  background-color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0F172A;
+  cursor: pointer;
+}
+
+.btn-download-csv {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-download-csv:hover {
+  background-color: #F8FAFC;
+  border-color: #94A3B8;
+  color: #E8313A;
+}
+
+.dosen-summary-banner {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 14px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  margin-bottom: 12px;
+}
+
+.banner-top-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.banner-stats-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.banner-percent-display {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.banner-percent-num {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #059669;
+}
+
+.banner-percent-sub {
+  font-size: 0.76rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.btn-tandai-alpha {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background-color: #FEE2E2;
+  color: #B91C1C;
+  border: 1px solid #FCA5A5;
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.banner-chips-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.stat-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.stat-chip-num {
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stat-chip-lbl {
+  font-size: 0.64rem;
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.chip-hadir { background-color: #ECFDF5; color: #059669; }
+.chip-terlambat { background-color: #FFFBEB; color: #D97706; }
+.chip-izin { background-color: #EFF6FF; color: #2563EB; }
+.chip-sakit { background-color: #F5F3FF; color: #7C3AED; }
+.chip-alpha { background-color: #FEF2F2; color: #DC2626; }
+.chip-belum { background-color: #F8FAFC; color: #64748B; }
+
+.catatan-materi-card {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid #E2E8F0;
+  margin-bottom: 12px;
+}
+
+.catatan-materi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.catatan-header-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #0F172A;
+}
+
+.catatan-saved-text {
+  font-size: 0.72rem;
+  color: #059669;
+  font-weight: 700;
+}
+
+.catatan-form {
+  display: flex;
+  gap: 8px;
+}
+
+.input-materi-text {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  font-size: 0.8rem;
+  color: #0F172A;
+}
+
+.btn-simpan-materi {
+  background-color: #E8313A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.filter-search-box {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 10px;
+  padding: 0 10px;
+  gap: 6px;
+}
+
+.search-mhs-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px 0;
+  font-size: 0.8rem;
+  color: #0F172A;
+  background: transparent;
+}
+
+.btn-clear-search {
+  background: none;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 2px;
+}
+
+.filter-status-wrapper {
+  width: 140px;
+}
+
+.select-status-filter {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #CBD5E1;
+  background-color: #FFFFFF;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0F172A;
+  cursor: pointer;
+}
+
+.dosen-mhs-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty-mhs-box {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  color: #64748B;
+  font-size: 0.85rem;
+  border: 1px dashed #CBD5E1;
+}
+
+.dosen-mhs-item-card {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 12px 14px;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+.mhs-farhan-highlight {
+  border: 1.5px solid #FCA5A5;
+  background-color: #FFFDFD;
+}
+
+.mhs-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mhs-avatar-initial {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%);
+  color: #475569;
+  font-weight: 800;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mhs-item-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.mhs-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mhs-nama-text {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1.25;
+}
+
+.tag-akun-anda {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background-color: #FEE2E2;
+  color: #DC2626;
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+.mhs-nim-text {
+  font-size: 0.74rem;
+  color: #64748B;
+  font-weight: 600;
+}
+
+.mhs-meta-presensi {
+  margin-top: 2px;
+}
+
+.mhs-jam-entry {
+  font-size: 0.72rem;
+  color: #059669;
+  font-weight: 700;
+}
+
+.mhs-jam-empty {
+  font-size: 0.72rem;
+  color: #94A3B8;
+  font-style: italic;
+}
+
+.badge-diubah-dosen {
+  display: inline-block;
+  font-size: 0.68rem;
+  color: #7C3AED;
+  background-color: #F5F3FF;
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+.mhs-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-edit-status-dosen {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid #CBD5E1;
+  color: #475569;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-edit-status-dosen:hover {
+  background-color: #F1F5F9;
+  border-color: #94A3B8;
+  color: #0F172A;
+}
+
+/* ========================================================================== */
+/* TAB 2: MATRIKS REKAP MINGGU 1-15 (RESPONSIF, STICKY COLUMN)                */
+/* ========================================================================== */
+.matriks-rekap-container {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 14px;
+  border: 1px solid #E2E8F0;
+}
+
+.matriks-controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.matriks-search-wrap {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  padding: 0 8px;
+}
+
+.matriks-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.78rem;
+  padding: 6px 0;
+}
+
+.matriks-sort-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.matriks-sort-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #64748B;
+}
+
+.matriks-sort-select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  background-color: #FFFFFF;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.matrix-legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background-color: #F8FAFC;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 0.72rem;
+}
+
+.legend-title {
+  font-weight: 700;
+  color: #475569;
+}
+
+.legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #475569;
+}
+
+.legend-note {
+  font-style: italic;
+  color: #94A3B8;
+  margin-left: auto;
+}
+
+.matrix-table-scroll-wrapper {
+  overflow-x: auto;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  position: relative;
+  max-width: 100%;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+.matrix-table th {
+  background-color: #F8FAFC;
+  color: #475569;
+  font-weight: 800;
+  padding: 8px 6px;
+  border-bottom: 1.5px solid #CBD5E1;
+  border-right: 1px solid #F1F5F9;
+  white-space: nowrap;
+}
+
+.matrix-table td {
+  padding: 6px;
+  border-bottom: 1px solid #F1F5F9;
+  border-right: 1px solid #F8FAFC;
+  white-space: nowrap;
+}
+
+.th-sticky-name,
+.td-sticky-name {
+  position: sticky;
+  left: 0;
+  background-color: #FFFFFF;
+  z-index: 2;
+  text-align: left;
+  min-width: 130px;
+  max-width: 150px;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.04);
+}
+
+.matrix-table th.th-sticky-name {
+  background-color: #F8FAFC;
+  z-index: 3;
+}
+
+.matrix-name-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.matrix-nama {
+  font-weight: 800;
+  color: #0F172A;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pill-mini-farhan {
+  font-size: 0.62rem;
+  color: #DC2626;
+  background-color: #FEE2E2;
+  padding: 1px 4px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.pill-mini-warning {
+  font-size: 0.62rem;
+  color: #B91C1C;
+  background-color: #FEE2E2;
+  padding: 1px 4px;
+  border-radius: 4px;
+  width: fit-content;
+  font-weight: 800;
+}
+
+.th-nim, .td-nim {
+  color: #64748B;
+  font-size: 0.72rem;
+  padding: 6px 8px;
+}
+
+.th-pertemuan {
+  font-size: 0.72rem;
+  width: 32px;
+}
+
+.th-today, .td-today {
+  background-color: #FFFBEB !important;
+}
+
+.td-cell-click {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.td-cell-click:hover {
+  background-color: #EEF2F6;
+}
+
+.matrix-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 0.72rem;
+}
+
+.cell-h { background-color: #DCFCE7; color: #15803D; }
+.cell-t { background-color: #FEF3C7; color: #B45309; }
+.cell-i { background-color: #DBEAFE; color: #1E40AF; }
+.cell-s { background-color: #EDE9FE; color: #6D28D9; }
+.cell-a { background-color: #FEE2E2; color: #B91C1C; }
+.cell-belum { background-color: #F1F5F9; color: #64748B; font-weight: 900; }
+.cell-empty { background-color: transparent; color: #CBD5E1; }
+
+.th-summary-stat {
+  font-size: 0.72rem;
+  padding: 6px 4px;
+}
+
+.td-stat {
+  font-weight: 700;
+  color: #475569;
+}
+
+.stat-t { color: #D97706 !important; }
+.stat-a { color: #DC2626 !important; }
+
+.th-persen, .td-persen {
+  padding: 6px 10px;
+}
+
+.matrix-percent-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.74rem;
+}
+
+.badge-percent-safe {
+  background-color: #ECFDF5;
+  color: #059669;
+}
+
+.badge-percent-danger {
+  background-color: #FEF2F2;
+  color: #DC2626;
+  border: 1px solid #FCA5A5;
+}
+
+.row-berisiko {
+  background-color: #FFFDFD;
+}
+
+.row-berisiko .td-sticky-name {
+  background-color: #FFF5F5;
+}
+
+/* ========================================================================== */
+/* TAB 3: STATISTIK KELAS & GRAFIK BATANG CSS                                 */
+/* ========================================================================== */
+.statistik-kelas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stats-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.stats-metric-card {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid #E2E8F0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stats-metric-card.metric-primary {
+  grid-column: span 3;
+}
+
+.stats-metric-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+}
+
+.stats-metric-val-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.stats-metric-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0F172A;
+  line-height: 1;
+}
+
+.stats-health-pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.health-good { background-color: #DCFCE7; color: #15803D; }
+.health-danger { background-color: #FEE2E2; color: #B91C1C; }
+
+.stats-metric-desc {
+  font-size: 0.68rem;
+  color: #94A3B8;
+  margin: 4px 0 0 0;
+}
+
+.text-danger { color: #DC2626 !important; }
+.text-warning { color: #D97706 !important; }
+
+/* GRAFIK BATANG CSS */
+.chart-card {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 14px;
+  border: 1px solid #E2E8F0;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.chart-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+.chart-subtitle {
+  font-size: 0.72rem;
+  color: #64748B;
+  margin: 2px 0 0 0;
+}
+
+.chart-legend-target {
+  font-size: 0.7rem;
+  color: #DC2626;
+  font-weight: 700;
+}
+
+.chart-bars-wrapper {
+  position: relative;
+  height: 160px;
+  padding-top: 20px;
+  padding-bottom: 24px;
+}
+
+.chart-threshold-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1.5px dashed #F87171;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.threshold-label {
+  position: absolute;
+  right: 4px;
+  top: -14px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #EF4444;
+}
+
+.chart-bars-track {
+  display: flex;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.chart-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar-val-text {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #64748B;
+  margin-bottom: 3px;
+}
+
+.bar-track {
+  width: 14px;
+  height: 100%;
+  background-color: #F1F5F9;
+  border-radius: 4px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.4s ease;
+}
+
+.fill-today {
+  background: linear-gradient(180deg, #F59E0B 0%, #D97706 100%);
+}
+
+.fill-success {
+  background: linear-gradient(180deg, #10B981 0%, #059669 100%);
+}
+
+.fill-danger {
+  background: linear-gradient(180deg, #EF4444 0%, #DC2626 100%);
+}
+
+.fill-future {
+  background-color: transparent;
+}
+
+.bar-label {
+  font-size: 0.65rem;
+  color: #94A3B8;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.label-today-bold {
+  color: #D97706 !important;
+  font-weight: 800;
+}
+
+/* RISK & LATE TABLES */
+.risk-tables-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.risk-card {
+  background-color: #FFFFFF;
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid #E2E8F0;
+}
+
+.card-berisiko { border-color: #FECACA; }
+.card-terlambat { border-color: #FDE68A; }
+
+.risk-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.risk-header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.risk-section-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0;
+}
+
+.badge-count-risk {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background-color: #FEE2E2;
+  color: #DC2626;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.badge-count-late {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background-color: #FEF3C7;
+  color: #B45309;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.empty-risk-state {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background-color: #F8FAFC;
+  border-radius: 8px;
+  color: #64748B;
+  font-size: 0.78rem;
+}
+
+.empty-check-icon {
+  color: #059669;
+  font-weight: 800;
+}
+
+.risk-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.risk-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background-color: #F8FAFC;
+  border-radius: 10px;
+}
+
+.risk-item-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.risk-mhs-nama {
+  font-size: 0.84rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.risk-mhs-nim {
+  font-size: 0.72rem;
+  color: #64748B;
+}
+
+.risk-mhs-breakdown {
+  font-size: 0.7rem;
+  color: #475569;
+  margin-top: 2px;
+}
+
+.risk-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.badge-danger-percent {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #DC2626;
+  background-color: #FEE2E2;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.badge-late-count {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #B45309;
+  background-color: #FEF3C7;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.btn-quick-override {
+  background: none;
+  border: none;
+  font-size: 0.72rem;
+  color: #E8313A;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* ========================================================================== */
+/* MODAL UBAH STATUS MANUAL                                                   */
+/* ========================================================================== */
+.modal-mhs-info-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #F8FAFC;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+}
+
+.modal-avatar-mhs {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #E2E8F0;
+  color: #475569;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.modal-mhs-nama {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #0F172A;
+}
+
+.modal-mhs-nim {
+  margin: 2px 0 0 0;
+  font-size: 0.76rem;
+  color: #64748B;
+}
+
+.modal-form-override {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-radio-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.status-radio-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1.5px solid #E2E8F0;
+  cursor: pointer;
+  font-size: 0.8rem;
+  background-color: #FFFFFF;
+  transition: all 0.15s ease;
+}
+
+.status-radio-card.selected {
+  background-color: #F8FAFC;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.modal-footer-override {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn-batal-modal {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  background: transparent;
+  color: #64748B;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-simpan-override {
+  padding: 8px 18px;
+  border-radius: 8px;
+  background-color: #E8313A;
+  color: #FFFFFF;
+  border: none;
+  font-weight: 800;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* ========================================================================== */
+/* AKUN DOSEN                                                                 */
+/* ========================================================================== */
+.profile-main-card {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.profile-avatar-large {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #E8313A 0%, #B91C1C 100%);
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(232, 49, 58, 0.25);
+  margin-bottom: 12px;
+}
+
+.profile-details-center {
+  margin-bottom: 16px;
+}
+
+.profile-name-lg {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 6px 0;
+}
+
+.profile-info-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 14px;
+}
+
+.profile-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+}
+
+.info-row-label {
+  color: #64748B;
+  font-weight: 600;
+}
+
+.info-row-value {
+  color: #0F172A;
+  font-weight: 700;
+}
+
+.text-success { color: #059669 !important; }
+
+.section-title-sub {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0 0 10px 0;
+}
+
+.akun-matkul-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.akun-matkul-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid #E2E8F0;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.akun-matkul-item:hover {
+  transform: translateY(-1px);
+}
+
+.akun-matkul-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.akun-matkul-kode {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #E8313A;
+}
+
+.akun-matkul-nama {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 1px 0;
+}
+
+.akun-matkul-jadwal {
+  font-size: 0.74rem;
+  color: #64748B;
+}
+
+.ta-prototype-box {
+  background-color: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.ta-box-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: #92400E;
+  margin-bottom: 6px;
+}
+
+.ta-box-header p {
+  margin: 0;
+  font-size: 0.72rem;
+  color: #B45309;
+}
+
+.ta-box-desc {
+  margin: 0;
+  font-size: 0.74rem;
+  color: #78350F;
+  line-height: 1.4;
+}
+
+.logout-button-container {
+  margin-top: 8px;
+}
+
+.btn-logout-full {
+  width: 100%;
+  padding: 12px;
+  background-color: #FEE2E2;
+  color: #DC2626;
+  border: 1px solid #FCA5A5;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout-full:hover {
+  background-color: #FECACA;
+}
+
+/* ========================================================================== */
+/* MODE DEVELOPER DOSEN (SIMULASI WAKTU)                                       */
+/* ========================================================================== */
+.dev-status-time-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  margin-bottom: 8px;
+  background-color: #F8FAFC;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.pill-sim-active {
+  color: #D97706;
+  font-weight: 800;
+  background-color: #FEF3C7;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+}
+
+.pill-sim-inactive {
+  color: #64748B;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.dev-time-form {
+  margin-bottom: 8px;
+}
+
+.dev-time-label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.dev-time-input-group {
+  display: flex;
+  gap: 6px;
+}
+
+.dev-time-input {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #CBD5E1;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.btn-set-time {
+  background-color: #0F172A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.btn-reset-time {
+  background-color: #E2E8F0;
+  color: #475569;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.dev-presets-time-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.btn-time-preset {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-time-preset:hover {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+.dev-actions-divider {
+  border-top: 1px dashed #CBD5E1;
+  padding-top: 10px;
+}
+
+.btn-dev-reset-all {
+  width: 100%;
+  background-color: #FEE2E2;
+  color: #B91C1C;
+  border: 1px solid #FCA5A5;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dev-feedback-toast {
+  margin-top: 8px;
+  background-color: #ECFDF5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.74rem;
+  font-weight: 700;
+}

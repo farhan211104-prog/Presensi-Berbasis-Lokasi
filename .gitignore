@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# Database & Uploads
+backend/data/*.db
+backend/data/*.db-journal
+backend/uploads/
+uploads/
+
+# Build artifacts
+dist/
+build/
+.DS_Store

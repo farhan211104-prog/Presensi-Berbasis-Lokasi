@@ -1,0 +1,83 @@
+/* ==========================================================================
+   RESET CSS & PENGATURAN DASAR
+   Membersihkan styling default Vite dan menyiapkan viewport mobile-first
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Variabel Warna Tema Telkom University */
+  --telu-red: #E8313A;
+  --telu-red-dark: #C7242C;
+  --telu-red-light: #FEECEE;
+  --telu-red-subtle: #FFF5F5;
+  
+  /* Warna Netral & Latar Belakang */
+  --bg-page: #F8F9FA;
+  --bg-desktop-backdrop: #E2E8F0;
+  --card-white: #FFFFFF;
+  --border-light: #E2E8F0;
+  --border-card: #ECEFF1;
+  
+  /* Tipografi */
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --text-subtle: #94A3B8;
+
+  /* Warna Status */
+  --status-green: #10B981;
+  --status-green-bg: #ECFDF5;
+  --status-blue: #3B82F6;
+  --status-blue-bg: #EFF6FF;
+  --status-yellow: #F59E0B;
+  --status-yellow-bg: #FFFBEB;
+  --status-red: #EF4444;
+  --status-red-bg: #FEF2F2;
+
+  /* Efek Bayangan Lembut */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --shadow-mobile-frame: 0 0 35px rgba(0, 0, 0, 0.12);
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-desktop-backdrop);
+  color: var(--text-main);
+}
+
+/* Memposisikan aplikasi tepat di tengah pada layar desktop/laptop */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
